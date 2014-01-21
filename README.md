@@ -20,7 +20,7 @@ Studyplus iOS SDK
 
 ```
 platform :ios, '6.0'
-pod 'StudyplusSDK', :git => 'https://github.com/studyplus/Studyplus-iOS-SDK.git'
+pod 'StudyplusSDK'
 ```
 
 ### Without CocoaPods
