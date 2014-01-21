@@ -78,19 +78,19 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 ```Objective-C
 @implementation YourClass
 
+-(void) doAuth {
+    [studyplus auth];
+}
+
+-(void) doLogin
+{
+    [studyplus login];
+}
+
 // Called by AppDelegate
 -(BOOL) openURL:(NSURL*)url
 {
     return [studyplus openURL:url];
-}
-
--(void) auth {
-    [studyplus auth];
-}
-
--(void) login
-{
-    [studyplus login];
 }
 
 // callback methods
