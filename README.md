@@ -115,17 +115,19 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 ```Objective-C
 -(void)post
 {
-    NSUInteger pages = 100;
 
     // Create new study record.
     StudyplusRecord *studyplusRecord =
       [StudyplusRecord
-       recordWithDuration:record.duration
+       recordWithDuration:3600
+       /** You can add optional info.
        options:@{
            @"recordedAt" : [NSDate date],
            @"comment" : @"アプリ◯◯で勉強しました！！",
-           @"amount" : [StudyplusRecordAmount amount:pages],
-      }];
+           @"amount" : [StudyplusRecordAmount amount:100],
+       }
+       */
+      ];
 
     // post
     [studyplus postStudyRecord:studyplusRecord];
