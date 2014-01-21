@@ -60,6 +60,14 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 ```
 
 ### Auth or Login 
+```Objective-C
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [studyplus openURL:url];
+}
+```
 
 ```Objective-C
 @implementation YourClass
@@ -73,6 +81,7 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
     [studyplus login];
 }
 
+// callback methods
 -(void)studyplusDidConnect:(Studyplus*)studyplus
 {
     NSLog(@"Auth or Login succeeded");
@@ -111,6 +120,7 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 }
 
+// callback methods
 -(void)studyplusDidPostStudyRecord:(Studyplus*)studyplus
 {
     NSLog(@"Post to Studyplus succeeded");
