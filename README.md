@@ -33,7 +33,7 @@ coming soon
 
 set "studyplus-*{your consumer key}*" to URL Types.
 
-![xcode](docs/set_url_schema.png)
+![xcode](https://github.com/studyplus/Studyplus-iOS-SDK/blob/master/docs/set_url_schema.png)
 
 ### Initialize
 
