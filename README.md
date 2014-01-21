@@ -78,6 +78,7 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 ```Objective-C
 @implementation YourClass
 
+// Called by AppDelegate
 -(BOOL) openURL:(NSURL*)url
 {
     return [studyplus openURL:url];
