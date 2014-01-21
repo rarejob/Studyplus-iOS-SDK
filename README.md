@@ -65,12 +65,23 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [studyplus openURL:url];
+    return [yourClassObject openURL:url];
 }
 ```
 
 ```Objective-C
+@interface YourClass
+-(BOOL)openURL:(NSURL*)url;
+@end
+```
+
+```Objective-C
 @implementation YourClass
+
+-(BOOL) openURL:(NSURL*)url
+{
+    return [studyplus openURL:url];
+}
 
 -(void) auth {
     [studyplus auth];
