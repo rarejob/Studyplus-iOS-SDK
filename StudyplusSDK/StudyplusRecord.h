@@ -77,8 +77,11 @@
  @param options Dictionary with amount:StudyplusRecordAmount, comment:NSString, recordedAt:NSDate.<br>
      // example.
      @{
+       // @see StudyplusRecordAmount
        @"amount": [StudyplusRecordAmount amountAsRangeWithFrom:10 to:33],
+       // Time the learning is ended. 学習を終えた日時。
        @"recordedAt": [NSDate date],
+       // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
        @"comment": @"アプリ◯◯で勉強しました！",
      }
  
