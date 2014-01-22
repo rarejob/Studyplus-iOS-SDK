@@ -57,7 +57,7 @@
 		43802C88185F6EFD00D941FE /* StudyplusRecordAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyplusRecordAmount.m; sourceTree = "<group>"; };
 		43802C8A185FF45800D941FE /* StudyplusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyplusAPIRequest.h; sourceTree = "<group>"; };
 		43802C8B185FF45800D941FE /* StudyplusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyplusAPIRequest.m; sourceTree = "<group>"; };
-		43802C8F185FFA7A00D941FE /* StudyplusLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusLogger.h; path = Libraries/StudyplusLogger.h; sourceTree = "<group>"; };
+		43802C8F185FFA7A00D941FE /* StudyplusLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyplusLogger.h; sourceTree = "<group>"; };
 		43E8E6761856CB770066D476 /* libStudyplusSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStudyplusSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E8E67D1856CB770066D476 /* StudyplusSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyplusSDK-Prefix.pch"; sourceTree = "<group>"; };
 		43E8E6861856CB770066D476 /* StudyplusSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyplusSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
