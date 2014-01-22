@@ -13,9 +13,9 @@
 		43692730188F7D3B00D06212 /* StudyplusErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692725188F7D3B00D06212 /* StudyplusErrorFactory.m */; };
 		43692731188F7D3B00D06212 /* StudyplusRecordAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */; };
 		43692732188F7D3B00D06212 /* StudyplusRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4369272A188F7D3B00D06212 /* StudyplusRecord.m */; };
+		43692BC7188FA25700D06212 /* libStudyplusSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E8E6761856CB770066D476 /* libStudyplusSDK.a */; };
 		436C40CC1866076000B35D72 /* StudyplusRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C40CB1866076000B35D72 /* StudyplusRecordTests.m */; };
 		43E8E6881856CB770066D476 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E8E6871856CB770066D476 /* XCTest.framework */; };
-		43E8E68E1856CB770066D476 /* libStudyplusSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E8E6761856CB770066D476 /* libStudyplusSDK.a */; };
 		43E8E6941856CB780066D476 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E8E6921856CB780066D476 /* InfoPlist.strings */; };
 		43E8E6A2185701C20066D476 /* StudyplusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E8E6A1185701C20066D476 /* StudyplusTests.m */; };
 		859935032AA94CC088D945B3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BEFFED25640C683A993B8 /* libPods.a */; };
@@ -83,8 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43692BC7188FA25700D06212 /* libStudyplusSDK.a in Frameworks */,
 				43E8E6881856CB770066D476 /* XCTest.framework in Frameworks */,
-				43E8E68E1856CB770066D476 /* libStudyplusSDK.a in Frameworks */,
 				33472D69D42A4309A1008C74 /* libPods-StudyplusSDKTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,18 +95,18 @@
 		43802C8E185FFA4A00D941FE /* Studyplus */ = {
 			isa = PBXGroup;
 			children = (
+				4369272D188F7D3B00D06212 /* Studyplus.h */,
 				43692722188F7D3B00D06212 /* Studyplus.m */,
+				4369272C188F7D3B00D06212 /* StudyplusAPIRequest.h */,
 				43692723188F7D3B00D06212 /* StudyplusAPIRequest.m */,
+				43692726188F7D3B00D06212 /* StudyplusDelegate.h */,
 				43692724188F7D3B00D06212 /* StudyplusErrorFactory.h */,
 				43692725188F7D3B00D06212 /* StudyplusErrorFactory.m */,
-				43692726188F7D3B00D06212 /* StudyplusDelegate.h */,
 				43692727188F7D3B00D06212 /* StudyplusLogger.h */,
-				43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */,
-				43692729188F7D3B00D06212 /* StudyplusRecordAmount.h */,
-				4369272A188F7D3B00D06212 /* StudyplusRecord.m */,
 				4369272B188F7D3B00D06212 /* StudyplusRecord.h */,
-				4369272C188F7D3B00D06212 /* StudyplusAPIRequest.h */,
-				4369272D188F7D3B00D06212 /* Studyplus.h */,
+				4369272A188F7D3B00D06212 /* StudyplusRecord.m */,
+				43692729188F7D3B00D06212 /* StudyplusRecordAmount.h */,
+				43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */,
 			);
 			name = Studyplus;
 			path = Classes;

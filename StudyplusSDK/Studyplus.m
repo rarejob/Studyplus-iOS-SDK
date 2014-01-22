@@ -117,15 +117,17 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
                                               @"version": [NSNumber numberWithInteger:self.apiVersion],
                                               }];
     
+    __block id<StudyplusDelegate> __delegate = self.delegate;
+    
     [request postRequestWithPath:@"study_records"
                 requestParameter:[studyplusRecord toRequestParam]
                        completed:^(NSDictionary *responseParameter) {
-                           if ([self.delegate respondsToSelector:@selector(studyplusDidPostStudyRecord:)]) {
-                               [self.delegate studyplusDidPostStudyRecord:self];
+                           if ([__delegate respondsToSelector:@selector(studyplusDidPostStudyRecord:)]) {
+                               [__delegate studyplusDidPostStudyRecord:self];
                            }
                        } failed:^(NSError *error) {
-                           if ([self.delegate respondsToSelector:@selector(studyplusDidFailToPostStudyRecord:withError:)]) {
-                               [self.delegate studyplusDidFailToPostStudyRecord:self withError:error];
+                           if ([__delegate respondsToSelector:@selector(studyplusDidFailToPostStudyRecord:withError:)]) {
+                               [__delegate studyplusDidFailToPostStudyRecord:self withError:error];
                            }
                        }];
 }

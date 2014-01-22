@@ -47,7 +47,7 @@ run() {
   lipo -create $ARM_DIR/$LIB_FILE_NAME $I386_DIR/$LIB_FILE_NAME $X86_64_DIR/$LIB_FILE_NAME -output "${PROUDCT_DIR}/${LIB_FILE_NAME}"
 
   # headers
-  cp -Rp $HEADERS_DIR/**/*.h $PROUDCT_DIR
+  cp -Rp $HEADERS_DIR/*.h $PROUDCT_DIR
 
   # documents
   cp -p ./LICENSE.txt $PROUDCT_DIR
