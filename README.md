@@ -16,21 +16,24 @@ Studyplus iOS SDK
 
 ## Install
 
-### With CocoaPods (recommended)
+### CocoaPods (recommended)
 
 ```ruby
-# Podfile
+# Edit your podfile
 platform :ios, '6.0'
 pod 'StudyplusSDK'
 ```
+and run
+```pod install ```
 
-```sh
-pod install
-```
+### Manual install
 
-### Without CocoaPods
+#### Source copy (iOS 7 required)
 
-coming soon
+1. Get StudyplusSDK
+  * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page]( https://github.com/studyplus/Studyplus-iOS-SDK/releases).
+2. Copy Studyplus-iOS-SDK/StudyplusSDK directory to your project.
+3. Install [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) and [AFNetworking](https://github.com/AFNetworking/AFNetworking) too.
 
 ## Usage
 
