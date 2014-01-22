@@ -1,4 +1,5 @@
-build
+build/archives
+build/**/working
 xcuserdata
 Pods
 xcshareddata
