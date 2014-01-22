@@ -28,16 +28,19 @@ and run
 
 ### Manual install
 
+#### By library and headers 
+
+1. Get StudyplusSDK.
+  * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page](https://github.com/studyplus/Studyplus-iOS-SDK/releases).
+2. Copy ```build/Release/deliverables/StudyplusSDK``` to your project.
+3. Add required frameworks(i.e. ```Security.framework, SystemConfiguration.framework, MobileCoreServices, CoreGraphics``` etc). see [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) and [AFNetworking](https://github.com/AFNetworking/AFNetworking).
+
 #### By source copy (iOS 7 required)
 
 1. Get StudyplusSDK
-  * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page]( https://github.com/studyplus/Studyplus-iOS-SDK/releases).
+  * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page](https://github.com/studyplus/Studyplus-iOS-SDK/releases).
 2. Copy Studyplus-iOS-SDK/StudyplusSDK directory to your project.
 3. Install [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) and [AFNetworking](https://github.com/AFNetworking/AFNetworking) too.
-
-#### By library and headers
-
-coming soon
 
 ## Usage
 
