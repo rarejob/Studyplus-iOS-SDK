@@ -12,6 +12,7 @@ Studyplus iOS SDK
  * CocoaPods (Optional, but recommended)
  
 ## Dependency
+ * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
  * [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore)
 
 ## Install
@@ -33,14 +34,14 @@ and run
 1. Get StudyplusSDK.
   * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page](https://github.com/studyplus/Studyplus-iOS-SDK/releases).
 2. Copy ```build/Release/deliverables/StudyplusSDK``` to your project.
-3. Add required frameworks(i.e. ```Security.framework, SystemConfiguration.framework, MobileCoreServices, CoreGraphics``` etc). see [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) and [AFNetworking](https://github.com/AFNetworking/AFNetworking).
+3. Add required frameworks(i.e. ```Security.framework, SystemConfiguration.framework, MobileCoreServices, CoreGraphics``` etc). See [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore).
 
 #### By source copy (iOS 7 required)
 
 1. Get StudyplusSDK
   * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page](https://github.com/studyplus/Studyplus-iOS-SDK/releases).
 2. Copy Studyplus-iOS-SDK/StudyplusSDK directory to your project.
-3. Install [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) and [AFNetworking](https://github.com/AFNetworking/AFNetworking) too.
+3. Install [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) too.
 
 ## Usage
 
