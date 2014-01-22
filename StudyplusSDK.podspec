@@ -1,6 +1,8 @@
+VERSION="0.0.2"
+
 Pod::Spec.new do |s|
   s.name         = "StudyplusSDK"
-  s.version      = "0.0.1"
+  s.version      = VERSION
   s.summary      = "Studyplus iOS SDK"
   s.description  = <<-DESC
   Let's post learning records to Studyplus(http://studyplus.jp)
@@ -9,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.author       = { "studyplus" => "dev+iossdk@studyplus.jp" }
   s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/studyplus/Studyplus-iOS-SDK.git", :tag => '0.0.1' }
+  s.source       = { :git => "https://github.com/studyplus/Studyplus-iOS-SDK.git", :tag => VERSION }
   s.source_files  = 'StudyplusSDK/**/*.{h,m}'
   s.public_header_files = 'StudyplusSDK/**/*.h'
   s.requires_arc = true
