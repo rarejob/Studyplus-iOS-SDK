@@ -19,14 +19,12 @@ Studyplus iOS SDK
 ### CocoaPods (recommended)
 
 ```ruby
-# Podfile
+# Edit your podfile
 platform :ios, '6.0'
 pod 'StudyplusSDK'
 ```
-
-```sh
-pod install
-```
+and run
+```pod install ```
 
 ### Manual install
 
