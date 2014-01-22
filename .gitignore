@@ -3,4 +3,4 @@ build/**/working
 xcuserdata
 Pods
 xcshareddata
-*.lock
+nowbuilding.lock
