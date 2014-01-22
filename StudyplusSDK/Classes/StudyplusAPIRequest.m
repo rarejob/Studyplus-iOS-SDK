@@ -110,7 +110,7 @@ static NSInteger const ApiDefaultVersion = 1;
 
 - (NSString *)buildUrlFromPath:(NSString *)path
 {
-    return [NSString stringWithFormat:@"%@v%d/%@", [self apiBaseURL], self.apiVersion, path];
+    return [NSString stringWithFormat:@"%@v%ld/%@", [self apiBaseURL], (long)self.apiVersion, path];
 }
 
 + (NSOperationQueue *)sharedQueue

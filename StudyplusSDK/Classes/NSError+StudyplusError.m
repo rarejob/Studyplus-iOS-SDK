@@ -76,11 +76,11 @@ static NSString* const ErrorDomain = @"jp.studyplus.sdk";
                          localizedDescription:@"Unknown Error."];
             break;
         default:
-            StudyplusSDKLog(@"Unexpected Studyplus status:[%d]", studyplusErrorCode);
+            StudyplusSDKLog(@"Unexpected Studyplus status:[%ld]", (long)studyplusErrorCode);
             error = [self.class errorWithCode:studyplusErrorCode
                          localizedDescription:[NSString
-                                               stringWithFormat:@"Unexpected Error(errorCode:[%d]).",
-                                               studyplusErrorCode]];
+                                               stringWithFormat:@"Unexpected Error(errorCode:[%ld]).",
+                                               (long)studyplusErrorCode]];
             break;
     }
     return error;
@@ -113,7 +113,7 @@ static NSString* const ErrorDomain = @"jp.studyplus.sdk";
                      errorFromStudyplusErrorCode:StudyplusErrorStudyplusInMaintenance];
             
         default:
-            StudyplusSDKLog(@"Unexpected http status:[%d]", httpStatusCode);
+            StudyplusSDKLog(@"Unexpected http status:[%ld]", (long)httpStatusCode);
             error = [[self class]
                      errorFromStudyplusErrorCode:StudyplusErrorUnknown];
             break;
