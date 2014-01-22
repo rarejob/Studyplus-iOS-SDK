@@ -9,7 +9,7 @@ Studyplus iOS SDK
  * Xcode command line tools
  * ARC
  * [Studyplus iOS App 3.10.0 or adove](https://itunes.apple.com/jp/app/mian-qiangga-leshiku-xuku!/id505410049?mt=8)
- * CocoaPods
+ * CocoaPods (Optional)
  
 ## Dependency
  * [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore)
