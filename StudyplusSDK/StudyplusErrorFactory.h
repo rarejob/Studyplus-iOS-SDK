@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, StudyplusError) {
     StudyplusErrorUnknown = 90000
 };
 
-@interface NSError (StudyplusError)
+@interface StudyplusErrorFactory : NSObject
 
 + (NSError*)errorFromStudyplusErrorCode:(StudyplusError)studyplusErrorCode;
 + (NSError*)errorFromStudyRecordPostStatusCode:(NSInteger)httpStatusCode;

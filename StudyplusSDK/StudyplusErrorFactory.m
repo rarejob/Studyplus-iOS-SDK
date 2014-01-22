@@ -20,64 +20,64 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "NSError+StudyplusError.h"
+#import "StudyplusErrorFactory.h"
 #import "StudyplusLogger.h"
 
 static NSString* const ErrorDomain = @"jp.studyplus.sdk";
 
-@implementation NSError (StudyplusError)
+@implementation StudyplusErrorFactory
 
 + (NSError*)errorFromStudyplusErrorCode:(StudyplusError)studyplusErrorCode
 {
     NSError *error;
     switch (studyplusErrorCode) {
         case StudyplusErrorGetAppDescription:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Failed to get information about application. (400 bad request)"];
             break;
             
         case StudyplusErrorAuthFailed:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Failed to authorize Studyplus user. (400 bad request)"];
             break;
             
         case StudyplusErrorLoginFailed:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Failed to login to Studyplus. (400 bad request)"];
             break;
             
         case StudyplusErrorStudyplusInMaintenance:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Maybe Studyplus is in temporary maintenance."];
             break;
             
         case StudyplusErrorInvalidStudyplusSession:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Studyplus session is invalid."];
             break;
             
         case StudyplusErrorNetworkUnavailable:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Network is not available."];
             break;
             
         case StudyplusErrorServerError:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Some error(s) occurred in Studyplus server."];
             break;
             
         case StudyplusErrorPostRecordFailed:
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:@"Failed to post study record. (400 bad request)"];
             break;
             
         case StudyplusErrorUnknown:
-            error = [self.class errorWithCode:StudyplusErrorUnknown
+            error = [StudyplusErrorFactory errorWithCode:StudyplusErrorUnknown
                          localizedDescription:@"Unknown Error."];
             break;
         default:
             StudyplusSDKLog(@"Unexpected Studyplus status:[%ld]", (long)studyplusErrorCode);
-            error = [self.class errorWithCode:studyplusErrorCode
+            error = [StudyplusErrorFactory errorWithCode:studyplusErrorCode
                          localizedDescription:[NSString
                                                stringWithFormat:@"Unexpected Error(errorCode:[%ld]).",
                                                (long)studyplusErrorCode]];
@@ -96,25 +96,25 @@ static NSString* const ErrorDomain = @"jp.studyplus.sdk";
     NSError *error;
     switch (httpStatusCode) {
         case 400:
-            error = [[self class]
+            error = [StudyplusErrorFactory
                      errorFromStudyplusErrorCode:StudyplusErrorPostRecordFailed];
             break;
             
         case 401:
-            error = [[self class]
+            error = [StudyplusErrorFactory
                      errorFromStudyplusErrorCode:StudyplusErrorInvalidStudyplusSession];
             
         case 500:
-            error = [[self class]
+            error = [StudyplusErrorFactory
                      errorFromStudyplusErrorCode:StudyplusErrorServerError];
             
         case 503:
-            error = [[self class]
+            error = [StudyplusErrorFactory
                      errorFromStudyplusErrorCode:StudyplusErrorStudyplusInMaintenance];
             
         default:
             StudyplusSDKLog(@"Unexpected http status:[%ld]", (long)httpStatusCode);
-            error = [[self class]
+            error = [StudyplusErrorFactory
                      errorFromStudyplusErrorCode:StudyplusErrorUnknown];
             break;
     }

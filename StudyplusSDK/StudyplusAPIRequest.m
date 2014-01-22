@@ -21,9 +21,9 @@
 //  THE SOFTWARE.
 
 #import "AFNetworking.h"
-#import "NSError+StudyplusError.h"
 #import "StudyplusAPIRequest.h"
 #import "StudyplusLogger.h"
+#import "StudyplusErrorFactory.h"
 
 @interface StudyplusAPIRequest()
 @property (nonatomic, readonly) NSString *accessToken;
@@ -69,7 +69,7 @@ static NSInteger const ApiDefaultVersion = 1;
                 requestParams:requestParameter
                     completed:completed
                        failed:^(NSInteger httpStatusCode, NSError *error) {
-                           failed([NSError errorFromStudyRecordPostStatusCode:httpStatusCode]);
+                           failed([StudyplusErrorFactory errorFromStudyRecordPostStatusCode:httpStatusCode]);
                        }];
 }
 

@@ -22,10 +22,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NSError+StudyplusError.h"
 #import "Studyplus.h"
 #import "StudyplusAPIRequest.h"
 #import "StudyplusLogger.h"
+#import "StudyplusErrorFactory.h"
 #import "UICKeyChainStore.h"
 
 static NSString * const UsernameStoreKey = @"username";
@@ -144,7 +144,7 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
     } else if ([url.pathComponents[1] isEqualToString:@"fail"]) {
         NSInteger studyplusErrorCode = [url.pathComponents[2] integerValue];
         [self.delegate studyplusDidFailToConnect:self
-                                       withError:[NSError
+                                       withError:[StudyplusErrorFactory
                                                   errorFromStudyplusErrorCode:studyplusErrorCode]];
     } else if ([url.pathComponents[1] isEqualToString:@"cancel"]) {
         if ([self.delegate respondsToSelector:@selector(studyplusDidCancel:)]) {

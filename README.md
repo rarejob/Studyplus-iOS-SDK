@@ -163,10 +163,10 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 ### More info about SDK interface
 
- * StudyplusSDK/Classes/Studyplus.h
- * StudyplusSDK/Classes/StudyplusDelegate.h
- * StudyplusSDK/Classes/StudyplusRecord.h
- * StudyplusSDK/Classes/StudyplusRecordAmount.h
+ * StudyplusSDK/Studyplus.h
+ * StudyplusSDK/StudyplusDelegate.h
+ * StudyplusSDK/StudyplusRecord.h
+ * StudyplusSDK/StudyplusRecordAmount.h
 
 ## License
 
