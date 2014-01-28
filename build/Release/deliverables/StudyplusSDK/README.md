@@ -138,8 +138,11 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
        recordWithDuration:3600
        /** You can add optional info.
        options:@{
+           // @see StudyplusRecordAmount
            @"recordedAt" : [NSDate date],
+           // Time the learning is ended. 学習を終えた日時。
            @"comment" : @"アプリ◯◯で勉強しました！！",
+           // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
            @"amount" : [StudyplusRecordAmount amount:100],
        }
        */

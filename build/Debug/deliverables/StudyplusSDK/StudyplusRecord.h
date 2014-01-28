@@ -75,15 +75,15 @@
  勉強した時間（秒数）を指定してください。
  
  @param options Dictionary with amount:StudyplusRecordAmount, comment:NSString, recordedAt:NSDate.<br>
-     // example.
-     @{
-       // @see StudyplusRecordAmount
-       @"amount": [StudyplusRecordAmount amountAsRangeWithFrom:10 to:33],
-       // Time the learning is ended. 学習を終えた日時。
-       @"recordedAt": [NSDate date],
-       // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
-       @"comment": @"アプリ◯◯で勉強しました！",
-     }
+     // example.<br>
+     @{<br>
+       // @see StudyplusRecordAmount<br>
+       @"amount": [StudyplusRecordAmount amountAsRangeWithFrom:10 to:33],<br>
+       // Time the learning is ended. 学習を終えた日時。<br>
+       @"recordedAt": [NSDate date],<br>
+       // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。<br>
+       @"comment": @"アプリ◯◯で勉強しました！",<br>
+     }<br>
  
  @result StudyplusRecord object.
  */
