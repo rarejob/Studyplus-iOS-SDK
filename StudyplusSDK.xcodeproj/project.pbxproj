@@ -237,6 +237,7 @@
 		43E8E66E1856CB770066D476 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SPL;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = studyplus.jp;
 			};
