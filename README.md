@@ -45,11 +45,11 @@ and run
 
 ## Usage
 
-### Set up custom URL schema
+### Set up custom URL scheme
 
 set "studyplus-*{your consumer key}*" to URL Types.
 
-![xcode](https://raw.github.com/studyplus/Studyplus-iOS-SDK/master/docs/set_url_schema.png)
+![xcode](https://raw.github.com/studyplus/Studyplus-iOS-SDK/master/docs/set_url_scheme.png)
 
 ### Initialize
 
