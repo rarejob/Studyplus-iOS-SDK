@@ -20,15 +20,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "StudyplusRecordAmount.h"
+#import "SPLStudyplusRecordAmount.h"
 
-@interface StudyplusRecordAmount()
+@interface SPLStudyplusRecordAmount()
 @property (nonatomic, readonly) NSDictionary *requestParameter;
 @end
 
-@implementation StudyplusRecordAmount
+@implementation SPLStudyplusRecordAmount
 
-+ (StudyplusRecordAmount*)amount:(NSUInteger)amount
++ (SPLStudyplusRecordAmount*)amount:(NSUInteger)amount
 {
     return [[[self class] alloc] initAsAmount:amount];
 }
@@ -43,7 +43,7 @@
     return self;
 }
 
-+ (StudyplusRecordAmount*)amountAsRangeWithFrom:(NSUInteger)from to:(NSUInteger)to
++ (SPLStudyplusRecordAmount*)amountAsRangeWithFrom:(NSUInteger)from to:(NSUInteger)to
 {
     return [[[self class] alloc] initAsRangeWithFrom:from to:to];
 }
@@ -59,7 +59,7 @@
     return self;
 }
 
-+ (StudyplusRecordAmount*)amountAsNone
++ (SPLStudyplusRecordAmount*)amountAsNone
 {
     return [[[self class] alloc] initAsNone];
 }

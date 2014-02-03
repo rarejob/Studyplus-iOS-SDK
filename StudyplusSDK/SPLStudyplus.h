@@ -20,9 +20,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "StudyplusDelegate.h"
-#import "StudyplusRecord.h"
-#import "StudyplusRecordAmount.h"
+#import "SPLStudyplusDelegate.h"
+#import "SPLStudyplusRecord.h"
+#import "SPLStudyplusRecordAmount.h"
 
 /**
  The class for using Studyplus.<br>
@@ -31,7 +31,7 @@
  Studyplusの各機能を使うためのクラスです。<br>
  Studyplusアカウントとの連携、連携解除、勉強記録の投稿ができます。
  */
-@interface Studyplus : NSObject
+@interface SPLStudyplus : NSObject
 
 /**
  The version of the StudyplusAPI. Default value is 1.<br>
@@ -64,9 +64,9 @@
 @property (nonatomic, copy, readonly) NSString *consumerSecret;
 
 /**
- @see StudyplusDelegate protocol
+ @see SPLStudyplusDelegate protocol
  */
-@property (nonatomic, weak) id<StudyplusDelegate> delegate;
+@property (nonatomic, weak) id<SPLStudyplusDelegate> delegate;
 
 /**
  When set to YES, if Studyplus is not installed, AppStore application starts when auth/login methods are called. Default value is YES.<br>
@@ -88,9 +88,9 @@
 
 
 /**
- The convenience constructor of Studyplus class.
+ The convenience constructor of SPLStudyplus class.
  
- Studyplusクラスのオブジェクトを生成して返します。
+ SPLStudyplusクラスのオブジェクトを生成して返します。
  
  @param consumerKey Specify a Consumer Key for StudyplusAPI.<br>
  StudyplusAPI用のコンシューマキーを指定してください。
@@ -98,11 +98,11 @@
  @param consumerSecret  Specify a Consumer Secret for StudyplusAPI.<br>
  StudyplusAPI用のコンシューマシークレットを指定してください。
  
- @return Studyplus object. <br>
- Studyplusオブジェクト。
+ @return SPLStudyplus object. <br>
+ SPLStudyplusオブジェクト。
  */
-+ (Studyplus*)studyplusWithConsumerKey:(NSString*)consumerKey
-                     andConsumerSecret:(NSString*)consumerSecret;
++ (SPLStudyplus*)studyplusWithConsumerKey:(NSString*)consumerKey
+                        andConsumerSecret:(NSString*)consumerSecret;
 
 /**
  Opens the auth screen by invoking the Studyplus application.
@@ -144,9 +144,9 @@
  Posts new study record to Studyplus.<br>
  Studyplusに勉強記録を新規投稿します。
  
- @param studyRecord @see StudyplusRecord
+ @param studyRecord @see SPLStudyplusRecord
  */
-- (void)postStudyRecord:(StudyplusRecord*)studyRecord;
+- (void)postStudyRecord:(SPLStudyplusRecord*)studyRecord;
 
 /**
  Cancels the cooperation with Studyplus application.<br>

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		33472D69D42A4309A1008C74 /* libPods-StudyplusSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD5C2B6437D459690D83F00 /* libPods-StudyplusSDKTests.a */; };
-		4369272E188F7D3B00D06212 /* Studyplus.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692722188F7D3B00D06212 /* Studyplus.m */; };
-		4369272F188F7D3B00D06212 /* StudyplusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692723188F7D3B00D06212 /* StudyplusAPIRequest.m */; };
-		43692730188F7D3B00D06212 /* StudyplusErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692725188F7D3B00D06212 /* StudyplusErrorFactory.m */; };
-		43692731188F7D3B00D06212 /* StudyplusRecordAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */; };
-		43692732188F7D3B00D06212 /* StudyplusRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4369272A188F7D3B00D06212 /* StudyplusRecord.m */; };
+		4369272E188F7D3B00D06212 /* SPLStudyplus.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692722188F7D3B00D06212 /* SPLStudyplus.m */; };
+		4369272F188F7D3B00D06212 /* SPLStudyplusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692723188F7D3B00D06212 /* SPLStudyplusAPIRequest.m */; };
+		43692730188F7D3B00D06212 /* SPLStudyplusError.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692725188F7D3B00D06212 /* SPLStudyplusError.m */; };
+		43692731188F7D3B00D06212 /* SPLStudyplusRecordAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692728188F7D3B00D06212 /* SPLStudyplusRecordAmount.m */; };
+		43692732188F7D3B00D06212 /* SPLStudyplusRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4369272A188F7D3B00D06212 /* SPLStudyplusRecord.m */; };
 		43692BC7188FA25700D06212 /* libStudyplusSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E8E6761856CB770066D476 /* libStudyplusSDK.a */; };
 		436C40CC1866076000B35D72 /* StudyplusRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C40CB1866076000B35D72 /* StudyplusRecordTests.m */; };
 		43E8E6881856CB770066D476 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E8E6871856CB770066D476 /* XCTest.framework */; };
@@ -45,18 +45,18 @@
 
 /* Begin PBXFileReference section */
 		29CE5CC863F3493BB4CD93D3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		43692722188F7D3B00D06212 /* Studyplus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Studyplus.m; path = StudyplusSDK/Studyplus.m; sourceTree = SOURCE_ROOT; };
-		43692723188F7D3B00D06212 /* StudyplusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudyplusAPIRequest.m; path = StudyplusSDK/StudyplusAPIRequest.m; sourceTree = SOURCE_ROOT; };
-		43692724188F7D3B00D06212 /* StudyplusErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusErrorFactory.h; path = StudyplusSDK/StudyplusErrorFactory.h; sourceTree = SOURCE_ROOT; };
-		43692725188F7D3B00D06212 /* StudyplusErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudyplusErrorFactory.m; path = StudyplusSDK/StudyplusErrorFactory.m; sourceTree = SOURCE_ROOT; };
-		43692726188F7D3B00D06212 /* StudyplusDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusDelegate.h; path = StudyplusSDK/StudyplusDelegate.h; sourceTree = SOURCE_ROOT; };
-		43692727188F7D3B00D06212 /* StudyplusLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusLogger.h; path = StudyplusSDK/StudyplusLogger.h; sourceTree = SOURCE_ROOT; };
-		43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudyplusRecordAmount.m; path = StudyplusSDK/StudyplusRecordAmount.m; sourceTree = SOURCE_ROOT; };
-		43692729188F7D3B00D06212 /* StudyplusRecordAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusRecordAmount.h; path = StudyplusSDK/StudyplusRecordAmount.h; sourceTree = SOURCE_ROOT; };
-		4369272A188F7D3B00D06212 /* StudyplusRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudyplusRecord.m; path = StudyplusSDK/StudyplusRecord.m; sourceTree = SOURCE_ROOT; };
-		4369272B188F7D3B00D06212 /* StudyplusRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusRecord.h; path = StudyplusSDK/StudyplusRecord.h; sourceTree = SOURCE_ROOT; };
-		4369272C188F7D3B00D06212 /* StudyplusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyplusAPIRequest.h; path = StudyplusSDK/StudyplusAPIRequest.h; sourceTree = SOURCE_ROOT; };
-		4369272D188F7D3B00D06212 /* Studyplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Studyplus.h; path = StudyplusSDK/Studyplus.h; sourceTree = SOURCE_ROOT; };
+		43692722188F7D3B00D06212 /* SPLStudyplus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplus.m; path = StudyplusSDK/SPLStudyplus.m; sourceTree = SOURCE_ROOT; };
+		43692723188F7D3B00D06212 /* SPLStudyplusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplusAPIRequest.m; path = StudyplusSDK/SPLStudyplusAPIRequest.m; sourceTree = SOURCE_ROOT; };
+		43692724188F7D3B00D06212 /* SPLStudyplusError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusError.h; path = StudyplusSDK/SPLStudyplusError.h; sourceTree = SOURCE_ROOT; };
+		43692725188F7D3B00D06212 /* SPLStudyplusError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplusError.m; path = StudyplusSDK/SPLStudyplusError.m; sourceTree = SOURCE_ROOT; };
+		43692726188F7D3B00D06212 /* SPLStudyplusDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusDelegate.h; path = StudyplusSDK/SPLStudyplusDelegate.h; sourceTree = SOURCE_ROOT; };
+		43692727188F7D3B00D06212 /* SPLStudyplusLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusLogger.h; path = StudyplusSDK/SPLStudyplusLogger.h; sourceTree = SOURCE_ROOT; };
+		43692728188F7D3B00D06212 /* SPLStudyplusRecordAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplusRecordAmount.m; path = StudyplusSDK/SPLStudyplusRecordAmount.m; sourceTree = SOURCE_ROOT; };
+		43692729188F7D3B00D06212 /* SPLStudyplusRecordAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusRecordAmount.h; path = StudyplusSDK/SPLStudyplusRecordAmount.h; sourceTree = SOURCE_ROOT; };
+		4369272A188F7D3B00D06212 /* SPLStudyplusRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplusRecord.m; path = StudyplusSDK/SPLStudyplusRecord.m; sourceTree = SOURCE_ROOT; };
+		4369272B188F7D3B00D06212 /* SPLStudyplusRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusRecord.h; path = StudyplusSDK/SPLStudyplusRecord.h; sourceTree = SOURCE_ROOT; };
+		4369272C188F7D3B00D06212 /* SPLStudyplusAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusAPIRequest.h; path = StudyplusSDK/SPLStudyplusAPIRequest.h; sourceTree = SOURCE_ROOT; };
+		4369272D188F7D3B00D06212 /* SPLStudyplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplus.h; path = StudyplusSDK/SPLStudyplus.h; sourceTree = SOURCE_ROOT; };
 		436C40CB1866076000B35D72 /* StudyplusRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyplusRecordTests.m; sourceTree = "<group>"; };
 		43E8E6761856CB770066D476 /* libStudyplusSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStudyplusSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E8E67D1856CB770066D476 /* StudyplusSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyplusSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -95,18 +95,18 @@
 		43802C8E185FFA4A00D941FE /* Studyplus */ = {
 			isa = PBXGroup;
 			children = (
-				4369272D188F7D3B00D06212 /* Studyplus.h */,
-				43692722188F7D3B00D06212 /* Studyplus.m */,
-				4369272C188F7D3B00D06212 /* StudyplusAPIRequest.h */,
-				43692723188F7D3B00D06212 /* StudyplusAPIRequest.m */,
-				43692726188F7D3B00D06212 /* StudyplusDelegate.h */,
-				43692724188F7D3B00D06212 /* StudyplusErrorFactory.h */,
-				43692725188F7D3B00D06212 /* StudyplusErrorFactory.m */,
-				43692727188F7D3B00D06212 /* StudyplusLogger.h */,
-				4369272B188F7D3B00D06212 /* StudyplusRecord.h */,
-				4369272A188F7D3B00D06212 /* StudyplusRecord.m */,
-				43692729188F7D3B00D06212 /* StudyplusRecordAmount.h */,
-				43692728188F7D3B00D06212 /* StudyplusRecordAmount.m */,
+				4369272D188F7D3B00D06212 /* SPLStudyplus.h */,
+				43692722188F7D3B00D06212 /* SPLStudyplus.m */,
+				4369272C188F7D3B00D06212 /* SPLStudyplusAPIRequest.h */,
+				43692723188F7D3B00D06212 /* SPLStudyplusAPIRequest.m */,
+				43692726188F7D3B00D06212 /* SPLStudyplusDelegate.h */,
+				43692724188F7D3B00D06212 /* SPLStudyplusError.h */,
+				43692725188F7D3B00D06212 /* SPLStudyplusError.m */,
+				43692727188F7D3B00D06212 /* SPLStudyplusLogger.h */,
+				4369272B188F7D3B00D06212 /* SPLStudyplusRecord.h */,
+				4369272A188F7D3B00D06212 /* SPLStudyplusRecord.m */,
+				43692729188F7D3B00D06212 /* SPLStudyplusRecordAmount.h */,
+				43692728188F7D3B00D06212 /* SPLStudyplusRecordAmount.m */,
 			);
 			name = Studyplus;
 			path = Classes;
@@ -337,11 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4369272F188F7D3B00D06212 /* StudyplusAPIRequest.m in Sources */,
-				43692732188F7D3B00D06212 /* StudyplusRecord.m in Sources */,
-				43692730188F7D3B00D06212 /* StudyplusErrorFactory.m in Sources */,
-				43692731188F7D3B00D06212 /* StudyplusRecordAmount.m in Sources */,
-				4369272E188F7D3B00D06212 /* Studyplus.m in Sources */,
+				4369272F188F7D3B00D06212 /* SPLStudyplusAPIRequest.m in Sources */,
+				43692732188F7D3B00D06212 /* SPLStudyplusRecord.m in Sources */,
+				43692730188F7D3B00D06212 /* SPLStudyplusError.m in Sources */,
+				43692731188F7D3B00D06212 /* SPLStudyplusRecordAmount.m in Sources */,
+				4369272E188F7D3B00D06212 /* SPLStudyplus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

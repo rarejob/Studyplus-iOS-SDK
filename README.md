@@ -54,21 +54,21 @@ set "studyplus-*{your consumer key}*" to URL Types.
 ### Initialize
 
 ```Objective-C
-#import "Studyplus.h"
+#import "SPLStudyplus.h"
 
 static NSString * const ConsumerKey = @"Your Studyplus consumer key";
 static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 @implementation YourClass
 {
-    Studyplus *studyplus;
+    SPLStudyplus *studyplus;
 }
 
 -(id) init {
 
     if (self = [super init]) {
-        studyplus = [Studyplus studyplusWithConsumerKey:ConsumerKey
-                                      andConsumerSecret:ConsumerSecret];
+        studyplus = [SPLStudyplus studyplusWithConsumerKey:ConsumerKey
+                                         andConsumerSecret:ConsumerSecret];
         studyplus.delegate = self;
     }
     return self;
@@ -110,17 +110,17 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 }
 
 // callback methods
--(void)studyplusDidConnect:(Studyplus*)studyplus
+-(void)studyplusDidConnect:(SPLStudyplus*)studyplus
 {
     NSLog(@"Auth or Login succeeded");
 }
 
--(void)studyplusDidFailToConnect:(Studyplus*)studyplus withError:(NSError*)error
+-(void)studyplusDidFailToConnect:(SPLStudyplus*)studyplus withError:(NSError*)error
 {
     NSLog(@"Auth or Login failed");
 }
 
-- (void)studyplusDidCancel:(Studyplus*)studyplus
+- (void)studyplusDidCancel:(SPLStudyplus*)studyplus
 {
     NSLog(@"Auth or Login canceled");
 } 
@@ -133,17 +133,17 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 {
 
     // Create new study record.
-    StudyplusRecord *studyplusRecord =
-      [StudyplusRecord
+    SPLStudyplusRecord *studyplusRecord =
+      [SPLStudyplusRecord
        recordWithDuration:3600
        /** You can add optional info.
        options:@{
-           // @see StudyplusRecordAmount
+           // @see SPLStudyplusRecordAmount
            @"recordedAt" : [NSDate date],
            // Time the learning is ended. 学習を終えた日時。
            @"comment" : @"アプリ◯◯で勉強しました！！",
            // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
-           @"amount" : [StudyplusRecordAmount amount:100],
+           @"amount" : [SPLStudyplusRecordAmount amount:100],
        }
        */
       ];
@@ -154,12 +154,12 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 }
 
 // callback methods
--(void)studyplusDidPostStudyRecord:(Studyplus*)studyplus
+-(void)studyplusDidPostStudyRecord:(SPLStudyplus*)studyplus
 {
     NSLog(@"Post to Studyplus succeeded");
 }
 
--(void)studyplusDidFailToPostStudyRecord:(Studyplus*)studyplus withError:(NSError*)error
+-(void)studyplusDidFailToPostStudyRecord:(SPLStudyplus*)studyplus withError:(NSError*)error
 {
     NSLog(@"Post to Studyplus failed");
 }
@@ -167,10 +167,10 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 ### More info about SDK interface
 
- * StudyplusSDK/Studyplus.h
- * StudyplusSDK/StudyplusDelegate.h
- * StudyplusSDK/StudyplusRecord.h
- * StudyplusSDK/StudyplusRecordAmount.h
+ * StudyplusSDK/SPLStudyplus.h
+ * StudyplusSDK/SPLStudyplusDelegate.h
+ * StudyplusSDK/SPLStudyplusRecord.h
+ * StudyplusSDK/SPLStudyplusRecordAmount.h
 
 ## License
 

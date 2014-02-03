@@ -22,13 +22,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class StudyplusRecordAmount;
+@class SPLStudyplusRecordAmount;
 
 /**
  Study record object to post to Studyplus.<br>
  Studyplusに投稿する一件の勉強記録を表現するクラスです。
  */
-@interface StudyplusRecord : NSObject
+@interface SPLStudyplusRecord : NSObject
 
 /**
  The seconds of the learning.<br>
@@ -48,7 +48,7 @@
  
  @see StudyplusRecordAmount
  */
-@property (nonatomic, readonly) StudyplusRecordAmount *recordAmount;
+@property (nonatomic, readonly) SPLStudyplusRecordAmount *recordAmount;
 
 /**
  The comment of learning.<br>
@@ -65,7 +65,7 @@
 
  @result StudyplusRecord object.
  */
-+ (StudyplusRecord*)recordWithDuration:(NSTimeInterval)duration;
++ (SPLStudyplusRecord*)recordWithDuration:(NSTimeInterval)duration;
 
 /**
  Creates and returns StudyplusRecord object that has number of seconds and other attributes.
@@ -87,7 +87,7 @@
  
  @result StudyplusRecord object.
  */
-+ (StudyplusRecord*)recordWithDuration:(NSTimeInterval)duration options:(NSDictionary*)options;
++ (SPLStudyplusRecord*)recordWithDuration:(NSTimeInterval)duration options:(NSDictionary*)options;
 
 /**
  @result Returns the parameters of the study record for posting API

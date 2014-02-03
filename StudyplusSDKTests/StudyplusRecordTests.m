@@ -1,8 +1,8 @@
 //  Copyright (c) 2013年 studyplus.jp. All rights reserved.
 
 #import "Kiwi.h"
-#import "StudyplusRecord.h"
-#import "StudyplusRecordAmount.h"
+#import "SPLStudyplusRecord.h"
+#import "SPLStudyplusRecordAmount.h"
 
 SPEC_BEGIN(StudyplusRecordTest)
 
@@ -10,12 +10,12 @@ describe(@"StudyplusRecord", ^{
     describe(@"toRequestParam", ^{
         
         it(@"returns NSDictionary", ^{
-            StudyplusRecord *record = [StudyplusRecord recordWithDuration:100];
+            SPLStudyplusRecord *record = [SPLStudyplusRecord recordWithDuration:100];
             [[record.toRequestParam should] beKindOfClass:[NSDictionary class]];
         });
         
         context(@"record has duration only", ^{
-            StudyplusRecord *record = [StudyplusRecord recordWithDuration:100];
+            SPLStudyplusRecord *record = [SPLStudyplusRecord recordWithDuration:100];
             NSDictionary *requestParams = record.toRequestParam;
             
             it(@"returns specified duration with default recordedAt", ^{
@@ -27,7 +27,7 @@ describe(@"StudyplusRecord", ^{
         });
         
         context(@"record has duration and comment", ^{
-            StudyplusRecord *record = [StudyplusRecord recordWithDuration:100
+            SPLStudyplusRecord *record = [SPLStudyplusRecord recordWithDuration:100
                                                                   options:@{
                                                                             @"comment":
                                                                                 @" (＿｀Д´), ○＝(ﾟ皿´ﾒ), (○`⊿´)"
@@ -43,9 +43,9 @@ describe(@"StudyplusRecord", ^{
         });
         
         context(@"record has duration and amount", ^{
-            StudyplusRecord *record = [StudyplusRecord recordWithDuration:100
+            SPLStudyplusRecord *record = [SPLStudyplusRecord recordWithDuration:100
                                                                   options:@{
-                                                                            @"amount":[StudyplusRecordAmount amount:999],
+                                                                            @"amount":[SPLStudyplusRecordAmount amount:999],
                                                                             }];
             NSDictionary *requestParams = record.toRequestParam;
             
@@ -58,9 +58,9 @@ describe(@"StudyplusRecord", ^{
         });
         
         context(@"record has duration and amount as range", ^{
-            StudyplusRecord *record = [StudyplusRecord recordWithDuration:100
+            SPLStudyplusRecord *record = [SPLStudyplusRecord recordWithDuration:100
                                                                   options:@{
-                                                                            @"amount":[StudyplusRecordAmount
+                                                                            @"amount":[SPLStudyplusRecordAmount
                                                                                        amountAsRangeWithFrom:90 to:91],
                                                                             }];
             NSDictionary *requestParams = record.toRequestParam;

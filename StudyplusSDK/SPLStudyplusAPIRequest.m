@@ -21,11 +21,11 @@
 //  THE SOFTWARE.
 
 #import "AFNetworking.h"
-#import "StudyplusAPIRequest.h"
-#import "StudyplusLogger.h"
-#import "StudyplusErrorFactory.h"
+#import "SPLStudyplusAPIRequest.h"
+#import "SPLStudyplusLogger.h"
+#import "SPLStudyplusError.h"
 
-@interface StudyplusAPIRequest()
+@interface SPLStudyplusAPIRequest()
 @property (nonatomic, readonly) NSString *accessToken;
 @property (nonatomic, readonly) NSInteger apiVersion;
 @end
@@ -33,7 +33,7 @@
 static NSString * const ApiBaseURL = @"https://external-api.studyplus.jp/";
 static NSInteger const ApiDefaultVersion = 1;
 
-@implementation StudyplusAPIRequest
+@implementation SPLStudyplusAPIRequest
 
 - (id)init
 {
@@ -43,10 +43,10 @@ static NSInteger const ApiDefaultVersion = 1;
     return self;
 }
 
-+ (StudyplusAPIRequest*)newRequestWithAccessToken:(NSString*)accessToken
++ (SPLStudyplusAPIRequest*)newRequestWithAccessToken:(NSString*)accessToken
                                           options:(NSDictionary*)options
 {
-    return [[StudyplusAPIRequest alloc] initWithAccessToken:accessToken
+    return [[SPLStudyplusAPIRequest alloc] initWithAccessToken:accessToken
                                                     options:options];
 }
 
@@ -69,7 +69,7 @@ static NSInteger const ApiDefaultVersion = 1;
                 requestParams:requestParameter
                     completed:completed
                        failed:^(NSInteger httpStatusCode, NSError *error) {
-                           failed([StudyplusErrorFactory errorFromStudyRecordPostStatusCode:httpStatusCode]);
+                           failed([SPLStudyplusError errorFromStudyRecordPostStatusCode:httpStatusCode]);
                        }];
 }
 

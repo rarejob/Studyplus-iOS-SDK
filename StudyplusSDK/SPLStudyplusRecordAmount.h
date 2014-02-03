@@ -26,16 +26,16 @@
  The class that represents the amount of learning. <br>
  学習量を表すクラスです。
  */
-@interface StudyplusRecordAmount : NSObject
+@interface SPLStudyplusRecordAmount : NSObject
 
 /**
  Creates and returns the Amount object with only the total amount of learning.<br>
  合計の学習量のみを持つAmountオブジェクトを生成して返します。
  
  @param amount 学習量。
- @result StudyplusRecordAmount* 生成したAmountオブジェクトです。
+ @result SPLStudyplusRecordAmount* 生成したAmountオブジェクトです。
  */
-+ (StudyplusRecordAmount*)amount:(NSUInteger)amount;
++ (SPLStudyplusRecordAmount*)amount:(NSUInteger)amount;
 
 /**
  Creates and returns the Amount object with a range of learning amount.<br>
@@ -43,16 +43,16 @@
  
  @param from 学習量の起点。
  @param to 学習量の終点。
- @result StudyplusRecordAmount* 生成したAmountオブジェクトです。
+ @result SPLStudyplusRecordAmount* 生成したAmountオブジェクトです。
  */
-+ (StudyplusRecordAmount*)amountAsRangeWithFrom:(NSUInteger)from to:(NSUInteger)to;
++ (SPLStudyplusRecordAmount*)amountAsRangeWithFrom:(NSUInteger)from to:(NSUInteger)to;
 
 /**
  Creates and returns the Amount object that has no learning amount.<br>
  学習量を持たないAmountオブジェクトを生成して返します。
- @result StudyplusRecordAmount* 生成したAmountオブジェクトです。
+ @result SPLStudyplusRecordAmount* 生成したAmountオブジェクトです。
  */
-+ (StudyplusRecordAmount*)amountAsNone;
++ (SPLStudyplusRecordAmount*)amountAsNone;
 
 /**
  @result Returns the parameters of the study record for posting API

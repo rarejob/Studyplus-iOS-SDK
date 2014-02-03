@@ -20,8 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "StudyplusRecord.h"
-#import "StudyplusRecordAmount.h"
+#import "SPLStudyplusRecord.h"
+#import "SPLStudyplusRecordAmount.h"
 
 @interface NSDate(Formattable)
 - (NSString*)toString:(NSString*)format;
@@ -31,14 +31,14 @@
 - (id)getKey:(NSString*)key orElse:(id)elseValue;
 @end
 
-@implementation StudyplusRecord
+@implementation SPLStudyplusRecord
 
-+ (StudyplusRecord*)recordWithDuration:(NSTimeInterval)duration
++ (SPLStudyplusRecord*)recordWithDuration:(NSTimeInterval)duration
 {
     return [self recordWithDuration:duration options:@{}];
 }
 
-+ (StudyplusRecord*)recordWithDuration: (NSTimeInterval)duration options:(NSDictionary*)options
++ (SPLStudyplusRecord*)recordWithDuration: (NSTimeInterval)duration options:(NSDictionary*)options
 {
     return [[[self class] alloc] initWithDuration:duration options:options];
 }
@@ -55,7 +55,7 @@
 {
     if (self = [super init]) {
         _duration = duration;
-        _recordAmount = [options getKey:@"amount" orElse:[StudyplusRecordAmount amountAsNone]];
+        _recordAmount = [options getKey:@"amount" orElse:[SPLStudyplusRecordAmount amountAsNone]];
         _recordedAt = [options getKey:@"recordedAt" orElse:[NSDate date]];
         _comment = [options getKey:@"comment" orElse:nil];
     }

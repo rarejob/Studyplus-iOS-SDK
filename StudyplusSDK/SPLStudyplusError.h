@@ -22,21 +22,21 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, StudyplusError) {
-    StudyplusErrorGetAppDescription = 1000,
-    StudyplusErrorAuthFailed = 2000,
-    StudyplusErrorLoginFailed = 3000,
-    StudyplusErrorStudyplusInMaintenance = 4000,
-    StudyplusErrorInvalidStudyplusSession = 5000,
-    StudyplusErrorNetworkUnavailable = 6000,
-    StudyplusErrorServerError = 7000,
-    StudyplusErrorPostRecordFailed = 8000,
-    StudyplusErrorUnknown = 90000
+typedef NS_ENUM(NSInteger, SPLErrorCode) {
+    SPLErrorCodeGetAppDescription = 1000,
+    SPLErrorCodeAuthFailed = 2000,
+    SPLErrorCodeLoginFailed = 3000,
+    SPLErrorCodeStudyplusInMaintenance = 4000,
+    SPLErrorCodeInvalidStudyplusSession = 5000,
+    SPLErrorCodeNetworkUnavailable = 6000,
+    SPLErrorCodeServerError = 7000,
+    SPLErrorCodePostRecordFailed = 8000,
+    SPLErrorCodeUnknown = 90000
 };
 
-@interface StudyplusErrorFactory : NSObject
+@interface SPLStudyplusError : NSObject
 
-+ (NSError*)errorFromStudyplusErrorCode:(StudyplusError)studyplusErrorCode;
++ (NSError*)errorFromStudyplusErrorCode:(SPLErrorCode)studyplusErrorCode;
 + (NSError*)errorFromStudyRecordPostStatusCode:(NSInteger)httpStatusCode;
 
 @end

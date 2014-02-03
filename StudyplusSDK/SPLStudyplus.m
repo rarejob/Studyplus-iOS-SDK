@@ -22,29 +22,29 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Studyplus.h"
-#import "StudyplusAPIRequest.h"
-#import "StudyplusLogger.h"
-#import "StudyplusErrorFactory.h"
+#import "SPLStudyplus.h"
+#import "SPLStudyplusAPIRequest.h"
+#import "SPLStudyplusLogger.h"
+#import "SPLStudyplusError.h"
 #import "UICKeyChainStore.h"
 
 static NSString * const UsernameStoreKey = @"username";
 static NSString * const AccessTokenStoreKey = @"accessToken";
 static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qiangga-leshiku-xuku!/id505410049?mt=8";
 
-@interface Studyplus()
+@interface SPLStudyplus()
 @property (nonatomic, copy, readwrite) NSString *consumerKey;
 @property (nonatomic, copy, readwrite) NSString *consumerSecret;
 @property (nonatomic, copy, readwrite) NSString *username;
 @property (nonatomic, copy, readwrite) NSString *accessToken;
 @end
 
-@implementation Studyplus
+@implementation SPLStudyplus
 
-+ (Studyplus*)studyplusWithConsumerKey:(NSString*)consumerKey
++ (SPLStudyplus*)studyplusWithConsumerKey:(NSString*)consumerKey
                      andConsumerSecret:(NSString*)consumerSecret
 {
-    return [[Studyplus alloc] __initWithConsumerKey:consumerKey
+    return [[SPLStudyplus alloc] __initWithConsumerKey:consumerKey
                                   andConsumerSecret:consumerSecret];
 }
 
@@ -102,7 +102,7 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
     return self.accessToken != nil;
 }
 
-- (void)postStudyRecord:(StudyplusRecord *)studyplusRecord
+- (void)postStudyRecord:(SPLStudyplusRecord *)studyplusRecord
 {
     if (self.debug) {
         if ([self.delegate respondsToSelector:@selector(studyplusDidPostStudyRecord:)]) {
@@ -111,13 +111,13 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
         return;
     }
     
-    StudyplusAPIRequest *request = [StudyplusAPIRequest
+    SPLStudyplusAPIRequest *request = [SPLStudyplusAPIRequest
                                     newRequestWithAccessToken:self.accessToken
                                     options:@{
                                               @"version": [NSNumber numberWithInteger:self.apiVersion],
                                               }];
     
-    __block id<StudyplusDelegate> __delegate = self.delegate;
+    __block id<SPLStudyplusDelegate> __delegate = self.delegate;
     
     [request postRequestWithPath:@"study_records"
                 requestParameter:[studyplusRecord toRequestParam]
@@ -146,7 +146,7 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
     } else if ([url.pathComponents[1] isEqualToString:@"fail"]) {
         NSInteger studyplusErrorCode = [url.pathComponents[2] integerValue];
         [self.delegate studyplusDidFailToConnect:self
-                                       withError:[StudyplusErrorFactory
+                                       withError:[SPLStudyplusError
                                                   errorFromStudyplusErrorCode:studyplusErrorCode]];
     } else if ([url.pathComponents[1] isEqualToString:@"cancel"]) {
         if ([self.delegate respondsToSelector:@selector(studyplusDidCancel:)]) {

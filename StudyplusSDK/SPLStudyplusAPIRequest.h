@@ -22,10 +22,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StudyplusAPIRequest : NSObject
+@interface SPLStudyplusAPIRequest : NSObject
 
-+ (StudyplusAPIRequest*)newRequestWithAccessToken:(NSString*)accessToken
-                                          options:(NSDictionary*)options;
++ (SPLStudyplusAPIRequest*)newRequestWithAccessToken:(NSString*)accessToken
+                                             options:(NSDictionary*)options;
 
 - (void)postRequestWithPath:(NSString *)path
            requestParameter:(NSDictionary *)requestParameter
