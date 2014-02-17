@@ -55,6 +55,14 @@ set "studyplus-*{your consumer key}*" to URL Types.
 ### Initialize
 
 ```Objective-C
+#import "SPLStudyplusDelegate.h"
+
+@interface YourClass<SPLStudyplusDelegate>
+-(BOOL)openURL:(NSURL*)url;
+@end
+```
+
+```Objective-C
 #import "SPLStudyplus.h"
 
 static NSString * const ConsumerKey = @"Your Studyplus consumer key";
