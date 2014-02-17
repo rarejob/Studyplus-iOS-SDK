@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StudyplusSDK"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "Studyplus iOS SDK"
   s.description  = <<-DESC
   Let's post learning records to Studyplus(http://studyplus.jp)
