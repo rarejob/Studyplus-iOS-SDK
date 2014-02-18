@@ -9,14 +9,16 @@
 #import "ViewController.h"
 #import "SPLStudyplus.h"
 
-static NSString * const ConsumerKey = @"Your Studyplus consumer key";
-static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
+static NSString * const ConsumerKey = @"Your consumer key";
+static NSString * const ConsumerSecret = @"Your consumer secret";
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *elapsedSecondsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *isConnectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actionResultLabel;
 @end
 
-static SPLStudyplus *studyplus;
+SPLStudyplus *studyplus;
 
 @implementation ViewController
 
@@ -24,58 +26,93 @@ static SPLStudyplus *studyplus;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [NSTimer
+     scheduledTimerWithTimeInterval:0.3f
+     target:self
+     selector:@selector(updateElapsedSeconds)
+     userInfo:nil
+     repeats:YES
+     ];
+    
+    [self updateIsConnected];
 }
 
 - (IBAction)auth:(id)sender {
-    [self doAuth];
+    [self.studyplus auth];
 }
 
 - (IBAction)login:(id)sender {
-    [self doLogin];
+    [self.studyplus login];
+}
+
+- (IBAction)logout:(id)sender {
+    [self.studyplus logout];
+    self.actionResultLabel.text = @"Logged out";
+    [self updateIsConnected];
+}
+
+- (IBAction)isConnected:(id)sender {
+    [self updateIsConnected];
 }
 
 - (IBAction)post:(id)sender {
     // Create new study record.
     SPLStudyplusRecord *studyplusRecord =
-    [SPLStudyplusRecord
-     recordWithDuration:3600
-     /** You can add optional info.
-      options:@{
-      // @see SPLStudyplusRecordAmount
-      @"recordedAt" : [NSDate date],
-      // Time the learning is ended. 学習を終えた日時。
-      @"comment" : @"アプリ◯◯で勉強しました！！",
-      // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
-      @"amount" : [SPLStudyplusRecordAmount amount:100],
-      }
-      */
-     ];
+        [SPLStudyplusRecord
+         
+         // @see SPLStopwatch
+         recordWithDuration:[[self studyplus].stopwatch elapsedSeconds]
+         
+         /** You can add optional info.
+          options:@{
+              // Time the learning is ended. 学習を終えた日時。
+              @"recordedAt" : [NSDate date],
+              // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
+              @"comment" : @"アプリ◯◯で勉強しました！！",
+              // @see SPLStudyplusRecordAmount
+              @"amount" : [SPLStudyplusRecordAmount amount:100],
+          }
+          */
+         ];
     
     // post
     [self.studyplus postStudyRecord:studyplusRecord];
 }
 
+- (IBAction)startStopwatch:(id)sender {
+    [[self studyplus].stopwatch start];
+    self.elapsedSecondsLabel.backgroundColor = [UIColor cyanColor];
+}
+
+- (IBAction)pauseStopwatch:(id)sender {
+    [[self studyplus].stopwatch pause];
+    self.elapsedSecondsLabel.backgroundColor = [UIColor groupTableViewBackgroundColor];
+}
+
+- (IBAction)resetStopwatch:(id)sender {
+    [[self studyplus].stopwatch reset];
+}
+
+- (void)updateElapsedSeconds {
+    self.elapsedSecondsLabel.text = [NSString stringWithFormat:@"%d", [[self studyplus].stopwatch elapsedSeconds]];
+}
+
+- (void)updateIsConnected {
+    self.isConnectedLabel.text = [[self studyplus] isConnected] ? @"YES" : @"NO";
+    self.actionResultLabel.text = @"";
+}
+
 -(SPLStudyplus*)studyplus
 {
+    if (studyplus) {
+        return studyplus;
+    }
+    
     studyplus = [SPLStudyplus studyplusWithConsumerKey:ConsumerKey
                                      andConsumerSecret:ConsumerSecret];
     studyplus.delegate = self;
     return studyplus;
-}
-
--(void) doAuth {
-    [self.studyplus auth];
-}
-
--(void) doLogin
-{
-    [self.studyplus login];
 }
 
 // Called by AppDelegate
@@ -87,27 +124,30 @@ static SPLStudyplus *studyplus;
 // callback methods
 -(void)studyplusDidConnect:(SPLStudyplus*)studyplus
 {
-    NSLog(@"Auth or Login succeeded");
+    self.actionResultLabel.text = @"Auth or Login succeeded";
+    [self updateIsConnected];
 }
 
 -(void)studyplusDidFailToConnect:(SPLStudyplus*)studyplus withError:(NSError*)error
 {
-    NSLog(@"Auth or Login failed");
+    self.actionResultLabel.text = @"Auth or Login failed";
+    [self updateIsConnected];
 }
 
 - (void)studyplusDidCancel:(SPLStudyplus*)studyplus
 {
-    NSLog(@"Auth or Login canceled");
+    self.actionResultLabel.text = @"Auth or Login canceled";
+    [self updateIsConnected];
 }
 
 -(void)studyplusDidPostStudyRecord:(SPLStudyplus*)studyplus
 {
-    NSLog(@"Post to Studyplus succeeded");
+    self.actionResultLabel.text = @"Post to Studyplus succeeded";
 }
 
 -(void)studyplusDidFailToPostStudyRecord:(SPLStudyplus*)studyplus withError:(NSError*)error
 {
-    NSLog(@"Post to Studyplus failed:%@", error);
+    self.actionResultLabel.text = error.localizedDescription;
 }
 
 @end

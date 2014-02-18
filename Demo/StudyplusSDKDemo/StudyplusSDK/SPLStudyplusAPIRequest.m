@@ -44,10 +44,10 @@ static NSInteger const ApiDefaultVersion = 1;
 }
 
 + (SPLStudyplusAPIRequest*)newRequestWithAccessToken:(NSString*)accessToken
-                                          options:(NSDictionary*)options
+                                             options:(NSDictionary*)options
 {
     return [[SPLStudyplusAPIRequest alloc] initWithAccessToken:accessToken
-                                                    options:options];
+                                                       options:options];
 }
 
 - (id)initWithAccessToken:(NSString*)accessToken
@@ -69,7 +69,11 @@ static NSInteger const ApiDefaultVersion = 1;
                 requestParams:requestParameter
                     completed:completed
                        failed:^(NSInteger httpStatusCode, NSError *error) {
-                           failed([SPLStudyplusError errorFromStudyRecordPostStatusCode:httpStatusCode]);
+                           if (error) {
+                               failed(error);
+                           } else {
+                               failed([SPLStudyplusError errorFromStudyRecordPostStatusCode:httpStatusCode]);
+                           }
                        }];
 }
 
@@ -90,8 +94,11 @@ static NSInteger const ApiDefaultVersion = 1;
     [manager POST:[self buildUrlFromPath:path]
        parameters:requestParams
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              StudyplusSDKLog(@"response: %@", responseObject);
-              completed((NSDictionary*)responseObject);
+              NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                       options:NSJSONReadingAllowFragments
+                                                                         error:nil];
+              StudyplusSDKLog(@"response: %@", response);
+              completed(response);
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               StudyplusSDKLog(@"Error: %@", error);
               failed(operation.response.statusCode, error);

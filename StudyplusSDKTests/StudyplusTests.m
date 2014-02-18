@@ -3,9 +3,10 @@
 #import "Kiwi.h"
 #import "SPLStudyplus.h"
 
-SPEC_BEGIN(StudyplusTest)
+SPEC_BEGIN(SPLStudyplusTest)
 
-describe(@"Studyplus", ^{
+describe(NSStringFromClass([SPLStudyplus class]), ^{
+    
     describe(@"studyplusWithConsumerKey:consumerSecret:", ^{
         
         context(@"consumerKey and consumerSecret are specified", ^{

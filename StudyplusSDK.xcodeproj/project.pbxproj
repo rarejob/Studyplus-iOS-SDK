@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33472D69D42A4309A1008C74 /* libPods-StudyplusSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD5C2B6437D459690D83F00 /* libPods-StudyplusSDKTests.a */; };
+		4302C73818B49A5F005A8390 /* SPLStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4302C73718B49A5F005A8390 /* SPLStopwatch.m */; };
 		4369272E188F7D3B00D06212 /* SPLStudyplus.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692722188F7D3B00D06212 /* SPLStudyplus.m */; };
 		4369272F188F7D3B00D06212 /* SPLStudyplusAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692723188F7D3B00D06212 /* SPLStudyplusAPIRequest.m */; };
 		43692730188F7D3B00D06212 /* SPLStudyplusError.m in Sources */ = {isa = PBXBuildFile; fileRef = 43692725188F7D3B00D06212 /* SPLStudyplusError.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		29CE5CC863F3493BB4CD93D3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4302C73618B49A5F005A8390 /* SPLStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStopwatch.h; path = StudyplusSDK/SPLStopwatch.h; sourceTree = SOURCE_ROOT; };
+		4302C73718B49A5F005A8390 /* SPLStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStopwatch.m; path = StudyplusSDK/SPLStopwatch.m; sourceTree = SOURCE_ROOT; };
 		43692722188F7D3B00D06212 /* SPLStudyplus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplus.m; path = StudyplusSDK/SPLStudyplus.m; sourceTree = SOURCE_ROOT; };
 		43692723188F7D3B00D06212 /* SPLStudyplusAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLStudyplusAPIRequest.m; path = StudyplusSDK/SPLStudyplusAPIRequest.m; sourceTree = SOURCE_ROOT; };
 		43692724188F7D3B00D06212 /* SPLStudyplusError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLStudyplusError.h; path = StudyplusSDK/SPLStudyplusError.h; sourceTree = SOURCE_ROOT; };
@@ -107,6 +110,8 @@
 				4369272A188F7D3B00D06212 /* SPLStudyplusRecord.m */,
 				43692729188F7D3B00D06212 /* SPLStudyplusRecordAmount.h */,
 				43692728188F7D3B00D06212 /* SPLStudyplusRecordAmount.m */,
+				4302C73618B49A5F005A8390 /* SPLStopwatch.h */,
+				4302C73718B49A5F005A8390 /* SPLStopwatch.m */,
 			);
 			name = Studyplus;
 			path = Classes;
@@ -164,7 +169,6 @@
 		43E8E68F1856CB780066D476 /* StudyplusTests */ = {
 			isa = PBXGroup;
 			children = (
-				43E8E6A01857019A0066D476 /* Connect */,
 				43E8E6A1185701C20066D476 /* StudyplusTests.m */,
 				436C40CB1866076000B35D72 /* StudyplusRecordTests.m */,
 				43E8E6901856CB780066D476 /* Supporting Files */,
@@ -180,13 +184,6 @@
 				43E8E6921856CB780066D476 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		43E8E6A01857019A0066D476 /* Connect */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Connect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4369272F188F7D3B00D06212 /* SPLStudyplusAPIRequest.m in Sources */,
+				4302C73818B49A5F005A8390 /* SPLStopwatch.m in Sources */,
 				43692732188F7D3B00D06212 /* SPLStudyplusRecord.m in Sources */,
 				43692730188F7D3B00D06212 /* SPLStudyplusError.m in Sources */,
 				43692731188F7D3B00D06212 /* SPLStudyplusRecordAmount.m in Sources */,

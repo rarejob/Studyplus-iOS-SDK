@@ -23,11 +23,12 @@
 #import "SPLStudyplusDelegate.h"
 #import "SPLStudyplusRecord.h"
 #import "SPLStudyplusRecordAmount.h"
+#import "SPLStopwatch.h"
 
 /**
  The class for using Studyplus.<br>
  For example, you can authenticate in Studyplus account, de-authentication, and post study record.
-
+ 
  Studyplusの各機能を使うためのクラスです。<br>
  Studyplusアカウントとの連携、連携解除、勉強記録の投稿ができます。
  */
@@ -86,6 +87,10 @@
  */
 @property (nonatomic, copy, readonly) NSString *accessToken;
 
+/**
+ @see SPLStopwatch class
+ */
+@property (nonatomic, readonly) SPLStopwatch *stopwatch;
 
 /**
  The convenience constructor of SPLStudyplus class.
@@ -116,7 +121,7 @@
  Studyplusアプリがインストールされていない場合、 openAppStoreIfNotInstalled がYESであれば、AppStoreを起動してStudyplusページを開きます。<br>
  openAppStoreIfNotInstalled がNOであれば何もしません。<br>
  Studyplusアプリから操作が戻ってきた後、delegateオブジェクトのコールバックメソッドを呼び出します。
-
+ 
  @return It returns YES when you started Studyplus application. If Studyplus application is not installed, it returns NO.<br>
  Studyplusアプリが起動した時点でYESを返します。Studyplusアプリがインストールされていない場合、NOを返します。
  */

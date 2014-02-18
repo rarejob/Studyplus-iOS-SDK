@@ -37,15 +37,16 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
 @property (nonatomic, copy, readwrite) NSString *consumerSecret;
 @property (nonatomic, copy, readwrite) NSString *username;
 @property (nonatomic, copy, readwrite) NSString *accessToken;
+@property (nonatomic, readwrite) SPLStopwatch *stopwatch;
 @end
 
 @implementation SPLStudyplus
 
 + (SPLStudyplus*)studyplusWithConsumerKey:(NSString*)consumerKey
-                     andConsumerSecret:(NSString*)consumerSecret
+                        andConsumerSecret:(NSString*)consumerSecret
 {
     return [[SPLStudyplus alloc] __initWithConsumerKey:consumerKey
-                                  andConsumerSecret:consumerSecret];
+                                     andConsumerSecret:consumerSecret];
 }
 
 - (id)__initWithConsumerKey:(NSString*)consumerKey
@@ -59,6 +60,7 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
         self.openAppStoreIfNotInstalled = YES;
         self.apiVersion = 1;
         self.debug = NO;
+        self.stopwatch = [SPLStopwatch new];
     }
     
     return self;
@@ -112,10 +114,10 @@ static NSString * const AppStoreURL = @"https://itunes.apple.com/jp/app/mian-qia
     }
     
     SPLStudyplusAPIRequest *request = [SPLStudyplusAPIRequest
-                                    newRequestWithAccessToken:self.accessToken
-                                    options:@{
-                                              @"version": [NSNumber numberWithInteger:self.apiVersion],
-                                              }];
+                                       newRequestWithAccessToken:self.accessToken
+                                       options:@{
+                                                 @"version": [NSNumber numberWithInteger:self.apiVersion],
+                                                 }];
     
     __block id<SPLStudyplusDelegate> __delegate = self.delegate;
     

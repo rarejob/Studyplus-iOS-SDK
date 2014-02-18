@@ -144,17 +144,23 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
     // Create new study record.
     SPLStudyplusRecord *studyplusRecord =
       [SPLStudyplusRecord
-       recordWithDuration:3600
+      
+       /**
+        @see SPLStopwatch
+        */
+       recordWithDuration:[studyplus.stopwatch elapsedSeconds]
+
        /** You can add optional info.
        options:@{
-           // @see SPLStudyplusRecordAmount
-           @"recordedAt" : [NSDate date],
            // Time the learning is ended. 学習を終えた日時。
-           @"comment" : @"アプリ◯◯で勉強しました！！",
+           @"recordedAt" : [NSDate date],
            // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
+           @"comment" : @"アプリ◯◯で勉強しました！！",
+           // @see SPLStudyplusRecordAmount
            @"amount" : [SPLStudyplusRecordAmount amount:100],
        }
        */
+
       ];
 
     // post

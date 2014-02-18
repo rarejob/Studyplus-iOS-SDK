@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate{
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -46,7 +47,10 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [[ViewController new] openURL:url];
+    ViewController *vc;
+    vc = [ViewController new];
+    NSLog(@"%@", vc);
+    return [vc openURL:url];
 }
 
 @end

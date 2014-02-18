@@ -34,7 +34,8 @@ and run
 1. Get StudyplusSDK.
   * ```git clone https://github.com/studyplus/Studyplus-iOS-SDK``` or download zip from [this page](https://github.com/studyplus/Studyplus-iOS-SDK/releases).
 2. Copy ```build/Release/deliverables/StudyplusSDK``` to your project.
-3. Add required frameworks(i.e. ```Security.framework, SystemConfiguration.framework, MobileCoreServices, CoreGraphics``` etc). See [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore).
+3. Install [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore) too.
+4. Add required frameworks(i.e. ```Security.framework, SystemConfiguration.framework, MobileCoreServices, CoreGraphics``` etc). See [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [UICKeyChainStore](https://github.com/kishikawakatsumi/UICKeyChainStore).
 
 #### By source copy (iOS 7 required)
 
@@ -52,6 +53,14 @@ set "studyplus-*{your consumer key}*" to URL Types.
 ![xcode](https://raw.github.com/studyplus/Studyplus-iOS-SDK/master/docs/set_url_scheme.png)
 
 ### Initialize
+
+```Objective-C
+#import "SPLStudyplusDelegate.h"
+
+@interface YourClass<SPLStudyplusDelegate>
+-(BOOL)openURL:(NSURL*)url;
+@end
+```
 
 ```Objective-C
 #import "SPLStudyplus.h"
@@ -135,17 +144,23 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
     // Create new study record.
     SPLStudyplusRecord *studyplusRecord =
       [SPLStudyplusRecord
-       recordWithDuration:3600
+      
+       /**
+        @see SPLStopwatch
+        */
+       recordWithDuration:[studyplus.stopwatch elapsedSeconds]
+
        /** You can add optional info.
        options:@{
-           // @see SPLStudyplusRecordAmount
-           @"recordedAt" : [NSDate date],
            // Time the learning is ended. 学習を終えた日時。
-           @"comment" : @"アプリ◯◯で勉強しました！！",
+           @"recordedAt" : [NSDate date],
            // Studyplus timeline comment. Studyplusのタイムライン上で表示されるコメント。
+           @"comment" : @"アプリ◯◯で勉強しました！！",
+           // @see SPLStudyplusRecordAmount
            @"amount" : [SPLStudyplusRecordAmount amount:100],
        }
        */
+
       ];
 
     // post
