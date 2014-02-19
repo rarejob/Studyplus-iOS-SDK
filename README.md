@@ -48,7 +48,8 @@ and run
 
 ### Set up custom URL scheme
 
-set "studyplus-*{your consumer key}*" to URL Types. (ex. studyplus-MIoh79q7pfMbTUVA3BNsSeTaZRcOK3yg )
+set "studyplus-*{your consumer key}*" to URL Types.  
+(ex. studyplus-MIoh79q7pfMbTUVA3BNsSeTaZRcOK3yg )
 
 ![xcode](https://raw.github.com/studyplus/Studyplus-iOS-SDK/master/docs/set_url_scheme.png)
 
