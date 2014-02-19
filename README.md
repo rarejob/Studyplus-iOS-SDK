@@ -68,10 +68,9 @@ set "studyplus-*{your consumer key}*" to URL Types.
 static NSString * const ConsumerKey = @"Your Studyplus consumer key";
 static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
+static SPLStudyplus *studyplus;
+
 @implementation YourClass
-{
-    SPLStudyplus *studyplus;
-}
 
 -(id) init {
 
@@ -176,6 +175,7 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
 
 -(void)studyplusDidFailToPostStudyRecord:(SPLStudyplus*)studyplus withError:(NSError*)error
 {
+    // see @SPLStudyplusError with error.code.
     NSLog(@"Post to Studyplus failed");
 }
 ```
