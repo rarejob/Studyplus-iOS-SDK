@@ -187,6 +187,16 @@ static NSString * const ConsumerSecret = @"Your Studyplus consumer secret";
  * StudyplusSDK/SPLStudyplusRecord.h
  * StudyplusSDK/SPLStudyplusRecordAmount.h
 
+## Demo app
+
+![demo](https://raw.github.com/studyplus/Studyplus-iOS-SDK/master/docs/demoapp.png)
+
+1. See Demo directory and open StudyplusSDKDemo/StudyplusSDKDemo.xcodeproj with Xcode5.
+2. Edit consumer key and consumer secret in Viewcontroller.m
+3. Set URL Type with your consumer key.
+4. run.
+5. Do "Auth" and "Post record", and see public timeline at http://studyplus.jp.
+
 ## License
 
 [MIT License.](http://opensource.org/licenses/mit-license.php)
