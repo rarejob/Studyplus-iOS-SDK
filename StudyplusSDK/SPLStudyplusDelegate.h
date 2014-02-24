@@ -48,7 +48,7 @@
  Studyplusオブジェクトです。
  @param error Error object including failure reason.<br>
  失敗の理由を持つエラーオブジェクトです。
- @see StudyplusNSError.h
+ @see StudyplusError.h
  */
 - (void)studyplusDidFailToConnect:(SPLStudyplus*)studyplus withError:(NSError*)error;
 
