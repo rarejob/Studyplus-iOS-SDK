@@ -5,4 +5,4 @@ target :StudyplusSDKTests, :exclusive => true do
 end
 
 pod 'UICKeyChainStore', '1.0.4'
-pod 'AFNetworking', '2.0.3'
+pod 'AFNetworking', '2.1.0'
