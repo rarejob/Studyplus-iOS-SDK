@@ -135,4 +135,7 @@ Pod::Spec.new do |s|
 
   s.dependency 'UICKeyChainStore', '1.0.4'
   s.dependency 'AFNetworking', '2.1.0'
+  s.source_files  = 'StudyplusSDK/**/*.{h,m}'
+  s.public_header_files = 'StudyplusSDK/**/*.h'
+
 end
