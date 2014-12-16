@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'UICKeyChainStore', '1.0.4'
-  s.dependency 'AFNetworking', '2.0.3'
+  s.dependency 'AFNetworking', '2.1.0'
 end
