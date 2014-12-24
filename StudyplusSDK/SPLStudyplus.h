@@ -67,7 +67,7 @@
 /**
  @see SPLStudyplusDelegate protocol
  */
-@property (nonatomic, weak) id<SPLStudyplusDelegate> delegate;
+@property (nonatomic) id<SPLStudyplusDelegate> delegate;
 
 /**
  When set to YES, if Studyplus is not installed, AppStore application starts when auth/login methods are called. Default value is YES.<br>
